@@ -43,8 +43,8 @@ function showCurrentLocation(position) {
   let lon = position.coords.longitude;
   let apiKey = "57f652d59f6bbf0d76afefad23d740f6";
   let cityInput = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&lat=${lat}&lon=${lon}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showLocationWeather);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(`${apiUrl}`).then(showLocationWeather);
 }
 function showLocationWeather(response) {
   let currentCity = document.querySelector("#city");
