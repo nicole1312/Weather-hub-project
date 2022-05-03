@@ -115,3 +115,14 @@ span {
   font-size: 20px;
   text-decoration: none;
 }
+.source {
+  font-size: 15px;
+  margin-left: -390px;
+  text-decoration: none;
+}
+.coder {
+  color: #2b4353;
+  font-size: 13px;
+  font-weight: bolder;
+  margin: 0 auto;
+}
