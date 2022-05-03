@@ -43,8 +43,12 @@ function showCurrentLocation(position) {
   let lon = position.coords.longitude;
   let apiKey = "57f652d59f6bbf0d76afefad23d740f6";
   let cityInput = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(showLocationWeather);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
 function showLocationWeather(response) {
   let currentCity = document.querySelector("#city");
@@ -63,12 +67,9 @@ function showLocationWeather(response) {
   let sky = document.querySelector("#sky");
   sky.innerHTML = response.data.weather[0].main;
   let degrees = document.querySelector("#degrees");
-  degrees.innerHTML = `${temp}`;
+  degrees.innerHTML = temp;
 }
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showCurrentLocation);
-}
+
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentLocation);
 
@@ -76,8 +77,8 @@ function showCity(event) {
   event.preventDefault();
   let apiKey = "57f652d59f6bbf0d76afefad23d740f6";
   let cityInput = document.querySelector("#city-input").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showLocationWeather);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&units=metric&appid=${apiKey}`;
+  axios.get(`${apiUrl}`).then(showLocationWeather);
 }
 
 let showCityInput = document.querySelector("form");
