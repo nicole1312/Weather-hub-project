@@ -95,14 +95,14 @@ p {
 span {
   color: #2b4353;
   font-size: 18px;
-  margin: 5px 65px;
+  margin: 5px 55px;
 }
 #degrees {
   font-weight: bold;
   font-size: 20px;
   margin-top: -5px;
   margin-left: 49px;
-  margin-right: -35px;
+  margin-right: -20px;
 }
 
 .celsius {
