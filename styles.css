@@ -1,5 +1,6 @@
 h1 {
-  display: inline;
+  margin-left: 40px;
+  margin-bottom: 15px;
   color: #2b4353;
   font-size: 18px;
 }
@@ -21,7 +22,7 @@ h4 {
 
 .location {
   text-align: center;
-  padding: 10px 10px;
+  padding: 5px;
   margin: 6px 5px;
   border-radius: 10px;
 }
@@ -42,19 +43,20 @@ h5 {
 }
 
 .data {
+  font-size: 15px;
   text-align: center;
-  margin: 15px 15px;
-  border-radius: 20px;
+  padding: 32px;
 }
 
 p {
   color: #2b4353;
   text-align: center;
 }
-#data-box {
-  font-size: 15px;
-  padding: 6px;
-  border-radius: 20px;
+
+img {
+  width: 100;
+  margin: -35px;
+  padding-right: 15px;
 }
 
 .week {
@@ -65,16 +67,15 @@ p {
   font-weight: bold;
   text-align: center;
   font-size: 18px;
-  padding: 5px 45px;
+  padding: 5px 20px;
   font-family: "Lucida Sans";
 }
 .col {
   text-align: center;
-  padding-left: 2px;
+  padding: 10px 10px;
 }
-
 .row {
-  padding: 13px 40px;
+  padding: 13px 30px;
 }
 
 span {
