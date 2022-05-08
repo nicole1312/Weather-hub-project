@@ -18,40 +18,46 @@
 
   <body>
     <div class="box">
-      <form>
-        <input type="text" id="city-input" placeholder="Search for a city" />
-        <input type="submit" id="search-city" value="search" />
-        <button type="button" class="btn btn-info" id="current-location">
-          Current Location
-        </button>
-        <h1>TheWeatherHub</h1>
-      </form>
+      <form id="search-form" class="mb-3">
+          <div class="row">
+              <div class="col-9">
+                  <input type="search" id="city-input" placeholder="Search for a city"  class="form-control " autocomplete="off"/>
+                </div>
+                 <div class="col-3">
+                  <input type="submit" id="search-city" value="search" class="btn btn-info w-100"/>
+                </div>
+                </div>
+            </form >
+       <h1>TheWeatherHub</h1>
       <div class="container">
         <div class="row row-col-2">
           <div class="col" id="col">
             <div class="card location">
               <div class="card-body location">
-                <h4 id="date">Sunday, 1 May 2022,16:42</h4>
+                <h4 id="date"> Sunday, 1 May 2022,16:42</h4>
                 <h5 class="london" id="city">
                   London
                 </h5>
                 <ul>
-                  <li id="sky">Partly cloudy</li> 
+                  <li id="sky"> clouds</li> 
                 <br />
                 <span id="degrees">14</span>
-                <span>
-                  <a href="#" class="celsius" id="celsius">°C </a>|
-                  <a href="#" class="fahrenheit" id="fahrenheit">°F</a>
+                <span class="units">
+                  <a href="# " class="celsius" id="celsius" >°C</a>|
+                  <a href="# " class="fahrenheit" id="fahrenheit">°F</a>
                 </span>
                 <div class="row">
                   <div class="col" id="high">14°C</div>
                   <div class="col" id="low">9°C</div>
                 </div>
-                <p class="card-text sun">🌥️</p>
+                <div class="clearfix weather-temperature">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="Clear sky"
+                id="icon"/>
+                </div>
               </div>
             </div>
           </div>
-          <div class="row col-4" id="data-box">
+        <div class="row col-4" id="data-box">
             <div class="col">
               <div class="card">
                 <div class="card-body data">

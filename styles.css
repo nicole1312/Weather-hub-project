@@ -9,21 +9,12 @@ h1 {
   display: block;
   margin: 0 auto;
   margin-top: 40px;
-  border: 3px solid #2b4353;
+  border: 1px solid #2b4353;
   border-radius: 20px;
   width: 650px;
   padding: 10px 10px;
 }
 
-#current-location {
-  font-size: 15px;
-  margin-bottom: 6px;
-  padding-right: 40px;
-}
-form {
-  font-size: 20px;
-  padding: 20px 65px;
-}
 h4 {
   font-size: 10px;
 }
@@ -32,6 +23,7 @@ h4 {
   text-align: center;
   padding: 10px 10px;
   margin: 6px 5px;
+  border-radius: 10px;
 }
 
 #city {
@@ -48,19 +40,11 @@ h4 {
 h5 {
   font-size: 15px;
 }
-p.sun {
-  font-size: 40px;
-  padding-bottom: -15px;
-  margin-top: -42px;
-}
 
-.text-muted {
-  color: grey;
-  font-size: 10px;
-}
 .data {
   text-align: center;
   margin: 15px 15px;
+  border-radius: 20px;
 }
 
 p {
@@ -70,6 +54,7 @@ p {
 #data-box {
   font-size: 15px;
   padding: 6px;
+  border-radius: 20px;
 }
 
 .week {
