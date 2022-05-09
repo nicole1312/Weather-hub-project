@@ -112,3 +112,13 @@ let fahrenheitTemperature = document.querySelector("#fahrenheit");
 fahrenheitTemperature.addEventListener("click", showFahrenheit);
 
 let celsiusTemperature = null;
+
+function showCurrentLocation(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "57f652d59f6bbf0d76afefad23d740f6";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(`${apiUrl}`).then(showWeather);
+}
+
+navigator.geolocation.getCurrentPosition(showCurrentLocation);
