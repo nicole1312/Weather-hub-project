@@ -12,105 +12,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>TheWeatherHub</title>
   </head>
 
   <body>
     <div class="box">
       <form id="search-form" class="mb-3">
-          <div class="row">
-              <div class="col-9">
-                  <input type="search" id="city-input" placeholder="Search for a city"  class="form-control " autocomplete="off"/>
-                </div>
-                 <div class="col-3">
-                  <input type="submit" id="search-city" value="search" class="btn btn-info w-100"/>
-                </div>
-                </div>
-            </form >
-       <h1>TheWeatherHub</h1>
-      <div class="container">
-        <div class="row row-col-2">
-          <div class="col" id="col">
-            <div class="card location">
-              <div class="card-body location">
-                 <h4 id="date"> Sunday, 1 May 2022,16:42</h4>
-                 <h5 class="london" id="city">
-                  London
-                 </h5>
-                 <ul>
-                   <li id="sky"> clouds</li> 
-                  <br />
-                  <span id="degrees">14</span>
-                  <span class="units">
-                  <a href="# " class="celsius" id="celsius" >°C</a>|
-                  <a href="# " class="fahrenheit" id="fahrenheit">°F</a>
-                  </span>
-                  <div class="row">
-                  <div class="col" id="high">14°C</div>
-                  <div class="col" id="low">9°C</div>
-                  </div>
-                  <img src=" https://openweathermap.org/img/wn/10d@2x.png" alt="Clear sky"
-                 id="icon" />
-              
-            </div>
+        <div class="row">
+          <div class="col-9">
+            <input
+              type="search"
+              id="city-input"
+              placeholder="Search for a city"
+              class="form-control"
+              autocomplete="off"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              id="search-city"
+              value="search"
+              class="btn btn-info w-100"
+            />
           </div>
         </div>
-        <div class="row col-5" id="data-box" >
-            <div class="col">
-              <div class="card">
-                <div class="card-body data">
-                  <h5 class="card-title humidity">
-                    Humidity/ %<br />
-                    <p id="humidity">1</p>
-                  </h5>
-                  <hr />
-                  <h5 class="card-title wind">
-                    Wind/ mph<br />
-                    <p id="wind">5</p>
-                  </h5>
-                  <hr />
-                  <h5 class="card-title pressure">
-                    Pressure/ mb<br />
-                    <p id="pressure">1000</p>
-                  </h5>
-                </div>
+      </form>
+      <h1>TheWeatherHub</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-7">
+            <div class="weather-data-box">
+              <h4 id="date">Sunday, 1 May 2022,16:42</h4>
+              <h5 class="london" id="city"></h5>
+              <ul>
+                <li id="sky">clouds</li>
+              </ul>
+              <br />
+              <span id="degrees"> </span>
+              <span class="units">
+                <a href="# " class="celsius" id="celsius">°C</a>|
+                <a href="# " class="fahrenheit" id="fahrenheit">°F</a>
+              </span>
+              <div class="row high-low">
+                <span class="col" id="high">14<small>°</small></span>
+                <span class="col" id="low">9<small>°</small></span>
+              </div>
+              <div class="clearfix weather-icon">
+                <img
+                  src=" http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Clear sky"
+                  width="100"
+                  id="icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="mb-3" id="weather-analysis-box">
+              <div>
+                <strong> Humidity </strong><br />
+                <span id="humidity"> </span>%
+              </div>
+              <br />
+              <div>
+                <strong> Wind </strong><br />
+                <span id="wind"> </span> mph
+              </div>
+              <br />
+              <div>
+                <strong> Pressure</strong> <br />
+                <span id="pressure"> </span> mb
               </div>
             </div>
           </div>
         </div>
-        <div class="row row-cols-5">
-          <div class="row">
-            <div class="col week">Sat</div>
-            <span>☀️<br /><strong>17°</strong></span>
-            <span>9°</span>
-          </div>
-          <div class="row">
-            <div class="col week">Sun</div>
-            <span>🌥️<br /><strong>16°</strong></span>
-            <span>7°</span>
-          </div>
-          <div class="row">
-            <div class="col week">Mon</div>
-            <span>☁️<br /><strong>14°</strong></span>
-            <span>5°</span>
-          </div>
-          <div class="row">
-            <div class="col week">Tue</div>
-            <span>☁️<br /><strong>13°</strong></span>
-            <span>5°</span>
-          </div>
-          <div class="row">
-            <div class="col week">Wed</div>
-            <span>☁️<br /><strong>13°</strong></span>
-            <span>6°</span>
-          </div>
-        </div>
       </div>
+      <div class="weather-forcast" id="forecast"></div>
     </div>
-    <p ><a href="https://github.com/nicole1312/weather-hub-project" target="_blank"  class="source">Open-source code </a>
-        <span class="coder">by Nicoleta Serban</span>
-       </p> 
+    <small>
+      <a
+        href="https://github.com/nicole1312/weather-hub-project"
+        target="_blank"
+        class="source"
+        >Open-source code
+      </a>
+      by Nicoleta Serban</small
+    >
+
     <script src="index.js"></script>
   </body>
 </html>

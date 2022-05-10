@@ -46,6 +46,48 @@ function formatDate(timeStamp) {
   return `${currentDay}, ${currentDates} ${currentMonth}  ${currentYear},   ${currentHour}:${currentMinutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row"> `;
+  forecastHTML =
+    forecastHTML +
+    `   <div class="col-2">
+            <div class="weather-forecast-date"><strong>Sat</strong></div>
+            <div class="clearfix">
+              <img
+                src=" https://openweathermap.org/img/wn/09d@2x.png"
+                alt=" "
+                width="60"
+              />
+            </div>
+            <div class="weather-forecast-temperatures">
+              <span class="weater-forecast-temperature-max"> 17° </span>
+              <span class="weather-forecast-temperature-min"> 9° </span>
+            </div>
+        </div>`;
+
+  forecastHTML =
+    forecastHTML +
+    `   <div class="col-2">
+            <div class="weather-forecast-date"><strong>Sat</strong></div>
+            <div class="clearfix">
+              <img
+                src=" https://openweathermap.org/img/wn/09d@2x.png"
+                alt=" "
+                width="60"
+              />
+            </div>
+            <div class="weather-forecast-temperatures">
+              <span class="weater-forecast-temperature-max"> 17° </span>
+              <span class="weather-forecast-temperature-min"> 9° </span>
+            </div>
+        </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let currentCity = document.querySelector("#city");
   currentCity.innerHTML = response.data.name;
@@ -89,8 +131,6 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("London");
-
 function showCelsius(event) {
   event.preventDefault();
   celsiusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
@@ -117,8 +157,11 @@ function showCurrentLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiKey = "57f652d59f6bbf0d76afefad23d740f6";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(`${apiUrl}`).then(showWeather);
 }
+
+search(showCurrentLocation);
+displayForecast();
 
 navigator.geolocation.getCurrentPosition(showCurrentLocation);
