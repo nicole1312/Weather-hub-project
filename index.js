@@ -50,39 +50,25 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row"> `;
-  forecastHTML =
-    forecastHTML +
-    `   <div class="col-2">
-            <div class="weather-forecast-date"><strong>Sat</strong></div>
-            <div class="clearfix">
-              <img
-                src=" https://openweathermap.org/img/wn/09d@2x.png"
-                alt=" "
-                width="60"
-              />
-            </div>
-            <div class="weather-forecast-temperatures">
-              <span class="weater-forecast-temperature-max"> 17° </span>
-              <span class="weather-forecast-temperature-min"> 9° </span>
-            </div>
-        </div>`;
-
-  forecastHTML =
-    forecastHTML +
-    `   <div class="col-2">
-            <div class="weather-forecast-date"><strong>Sat</strong></div>
-            <div class="clearfix">
-              <img
-                src=" https://openweathermap.org/img/wn/09d@2x.png"
-                alt=" "
-                width="60"
-              />
-            </div>
-            <div class="weather-forecast-temperatures">
-              <span class="weater-forecast-temperature-max"> 17° </span>
-              <span class="weather-forecast-temperature-min"> 9° </span>
-            </div>
-        </div>`;
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `   <div class="col-2">
+                <div class="weather-forecast-date"><strong>${day}</strong></div>
+                <div class="clearfix">
+                  <img
+                    src=" http://openweathermap.org/img/wn/09d@2x.png"
+                    alt=" "
+                    width="60"
+                  />
+                </div>
+                <div class="weather-forecast-temperatures">
+                  <span class="weater-forecast-temperature-max"> 17° </span>
+                  <span class="weather-forecast-temperature-min"> 9° </span>
+                </div>
+            </div>`;
+  });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
