@@ -1,8 +1,3 @@
-let apiKey = "02743828b1081c945744035baeda7192";
-let city = "London";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-axios.get(`${apiUrl}`).then(showWeather);
-
 function formatDate(timeStamp) {
   let date = new Date(timeStamp);
 
@@ -76,7 +71,7 @@ function displayForecast(response) {
                   />
                 </div>
                 <div class="weather-forecast-temperatures">
-                  <span class="weater-forecast-temperature-max"> ${Math.round(
+                  <span class="weather-forecast-temperature-max"> ${Math.round(
                     forecastDay.temp.max
                   )}° </span>
                   <span class="weather-forecast-temperature-min"> ${Math.round(
@@ -111,9 +106,9 @@ function showWeather(response) {
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
   let high = document.querySelector("#high");
-  high.innerHTML = Math.round(response.data.main.temp_max);
+  high.innerHTML = `⇧${Math.round(response.data.main.temp_max)}°`;
   let low = document.querySelector("#low");
-  low.innerHTML = Math.round(response.data.main.temp_min);
+  low.innerHTML = `⇩${Math.round(response.data.main.temp_min)}°`;
   let sky = document.querySelector("#sky");
   sky.innerHTML = response.data.weather[0].description;
 
